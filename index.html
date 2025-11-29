@@ -11,19 +11,38 @@
       background: #000;
       color: #fff;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      height: 100%;
     }
 
-    /* Center content and cap at 375px width */
+    /* Make sure the body can scroll vertically */
+    body {
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+
+    /* Center content and cap it at 375px */
     .wrapper {
       max-width: 375px;
       margin: 0 auto;
+      padding-bottom: 40px;
     }
 
     .report-frame {
       width: 100%;
-      height: 3000px;   /* adjust this later if you want more/less scroll */
+      height: 3000px;   /* plenty of space for scrolling */
       border: 0;
       display: block;
+    }
+
+    /* TEMP test block so we can see if scroll works at all */
+    .test-block {
+      margin-top: 16px;
+      height: 300px;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -34,6 +53,10 @@
       src="https://app.powerbi.com/view?r=eyJrIjoiY2EwOWUyOWMtYWEzMS00YTE4LWI4NmItNzg0ZGQyYjc2NTI1IiwidCI6IjA2Y2VlYzZjLWI3MTEtNGFiNS1hMzZkLWRmYTUwZmQ2YWNiMyJ9"
       allowfullscreen="true">
     </iframe>
+
+    <div class="test-block">
+      If you can see this box, scrolling works.
+    </div>
   </div>
 </body>
 </html>
