@@ -11,17 +11,27 @@
       background: #000;
       color: #fff;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-y: auto;
     }
 
     /* Center content and cap at 375px width */
     .wrapper {
       max-width: 375px;
       margin: 0 auto;
+      padding-bottom: 200px;  /* extra space at the bottom helps ensure scroll */
+      <div style="height: 300px; background:#111; display:flex; align-items:center; justify-content:center; margin-top:16px;">
+        If you can see this box, you’ve reached the bottom.
+      </div>
     }
 
     .report-frame {
       width: 100%;
-      height: 2200px;   /* adjust this later if you want more/less scroll */
+      height: 4200px;   /* adjust this later if you want more/less scroll */
       border: 0;
       display: block;
     }
