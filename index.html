@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Game Changers Eco Footprint Visualizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    /* Center content and cap at 375px width */
+    .wrapper {
+      max-width: 375px;
+      margin: 0 auto;
+    }
+
+    .report-frame {
+      width: 100%;
+      height: 2200px;   /* adjust this later if you want more/less scroll */
+      border: 0;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <iframe
+      class="report-frame"
+      src="https://app.powerbi.com/view?r=eyJrIjoiY2EwOWUyOWMtYWEzMS00YTE4LWI4NmItNzg0ZGQyYjc2NTI1IiwidCI6IjA2Y2VlYzZjLWI3MTEtNGFiNS1hMzZkLWRmYTUwZmQ2YWNiMyJ9"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+</body>
+</html>
