@@ -10,80 +10,30 @@
       padding: 0;
       background: #000;
       color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    body {
-      overflow-y: auto;
-      min-height: 100vh;
-    }
-
+    /* Center content and cap at 375px width */
     .wrapper {
       max-width: 375px;
       margin: 0 auto;
-      padding-bottom: 300px; /* ensures scroll space */
-      position: relative;
     }
 
-    .report-container {
+    .report-frame {
       width: 100%;
-      height: 3000px;
-      position: relative;
-    }
-
-    /* KEY FIX: Allow scrolling over iframe */
-    iframe.report-frame {
-      width: 100%;
-      height: 100%;
+      height: 2200px;   /* adjust this later if you want more/less scroll */
       border: 0;
-      pointer-events: auto; /* we will toggle this on click */
-    }
-
-    /* Transparent overlay to let scroll pass */
-    .scroll-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      pointer-events: none;   /* allows scroll through */
-      z-index: 10;
+      display: block;
     }
   </style>
 </head>
-
 <body>
   <div class="wrapper">
-
-    <div class="report-container">
-      <div class="scroll-overlay"></div>
-
-      <iframe
-        class="report-frame"
-        src="https://app.powerbi.com/view?r=eyJrIjoiY2EwOWUyOWMtYWEzMS00YTE4LWI4NmItNzg0ZGQyYjc2NTI1IiwidCI6IjA2Y2VlYzZjLWI3MTEtNGFiNS1hMzZkLWRmYTUwZmQ2YWNiMyJ9"
-        allowfullscreen="true">
-      </iframe>
-    </div>
-
+    <iframe
+      class="report-frame"
+      src="https://app.powerbi.com/view?r=eyJrIjoiY2EwOWUyOWMtYWEzMS00YTE4LWI4NmItNzg0ZGQyYjc2NTI1IiwidCI6IjA2Y2VlYzZjLWI3MTEtNGFiNS1hMzZkLWRmYTUwZmQ2YWNiMyJ9"
+      allowfullscreen="true">
+    </iframe>
   </div>
-
-  <script>
-    // On tap, temporarily enable interaction inside the iframe
-    const iframe = document.querySelector('.report-frame');
-    const overlay = document.querySelector('.scroll-overlay');
-
-    overlay.addEventListener('click', () => {
-      overlay.style.pointerEvents = 'none';
-      iframe.style.pointerEvents = 'auto';
-
-      // Re-enable scroll after 3 seconds of no interaction
-      setTimeout(() => {
-        iframe.style.pointerEvents = 'none';
-        overlay.style.pointerEvents = 'auto';
-      }, 3000);
-    });
-  </script>
-
 </body>
 </html>
